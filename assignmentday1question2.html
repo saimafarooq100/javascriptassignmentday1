@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var employees = [
+        {EmpNo: 1, EmpName:'ali', salary:25666,DeptName:'acc'},
+        {EmpNo: 2, EmpName:'wali', salary:25666,DeptName:'fin'},
+        {EmpNo: 3, EmpName:'bali', salary:25666,DeptName:'mng'},
+        {EmpNo: 4, EmpName:'cali', salary:25666,DeptName:'ops'},
+ 	    {EmpNo: 5, EmpName:'sali', salary:25666,DeptName:'ops'},
+	    {EmpNo: 6, EmpName:'nali', salary:25666,DeptName:'fin'},
+        {EmpNo: 7, EmpName:'jali', salary:25666,DeptName:'mng'},
+        ];
+       
+      
+      
+    
+    
+     let names=[]
+     print_ascending_names();    
+     console.log(names)  
+     
+    let dept_acc=[]
+    let dept_fin=[]
+    let dept_ops=[]
+    let dept_mng=[]
+    deptnames();
+    
+    var sal_mng=0
+    var sal_acc=0
+    var sal_ops=0
+    var sal_fin=0
+    sum_salary()
+    
+    
+    function print_ascending_names()  {
+      
+        for (i=0;i<employees.length;i++)
+        {
+          names[i]=employees[i].EmpName
+        }
+        names.sort()
+      }
+        
+        
+        
+        
+      function deptnames()
+      {
+        for (i=0;i<employees.length;i++)
+        {
+          if(employees[i].DeptName=='acc')
+          {
+            dept_acc[i]=employees[i]
+            
+          }
+          else if(employees[i].DeptName=='fin')
+          {
+            dept_fin[i]=employees[i]
+          }
+          else if(employees[i].DeptName=='mng')
+          {
+            dept_mng[i]=employees[i]
+          }
+          else if(employees[i].DeptName=='ops')
+          {
+            dept_ops[i]=employees[i]
+          }
+          
+        }
+        
+        console.log(`employees in operations dept:`)
+        console.log(dept_ops)
+        console.log(`employees in mngmnt dept: `)
+        console.log(dept_mng)
+        console.log(`employees in finance dept: `)
+        console.log(dept_fin)
+        console.log(`employees in accounts dept: `)
+        console.log(dept_acc)
+
+        
+      }
+      
+      
+      function sum_salary()
+      {
+        for (i=0;i<employees.length;i++)
+        {
+          if(employees[i].DeptName=='acc')
+          {
+            sal_acc=sal_acc+employees[i].salary
+          }
+          else if(employees[i].DeptName=='mng')
+          {
+            sal_mng=sal_mng+employees[i].salary
+          }
+          else if(employees[i].DeptName=='ops')
+          {
+            sal_ops=sal_ops+employees[i].salary
+          }
+          else if(employees[i].DeptName=='fin')
+          {
+            sal_fin=sal_fin+employees[i].salary
+          }
+          
+        }
+        console.log(`total salary of mngmnt departmnt is: ${sal_mng}`)
+        console.log(`total salary of operations departmnt is: ${sal_ops}`)
+        console.log(`total salary of finance departmnt is: ${sal_fin}`)
+        console.log(`total salary of accounts departmnt is: ${sal_acc}`)
+      }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
